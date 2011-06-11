@@ -29,6 +29,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
+import javax.swing.UIManager;
 import javax.swing.table.DefaultTableModel;
 
 import org.jdesktop.swingx.JXTable;
@@ -107,6 +108,13 @@ public class MainInterface extends JFrame implements AWTEventListener {
 	 * Constructor
 	 */
 	public MainInterface() {
+		
+		// Set Windows look 'n' feel
+		try {
+			UIManager.setLookAndFeel( UIManager.getSystemLookAndFeelClassName() );
+		} catch (Exception e) {
+	    	e.printStackTrace();
+	    }
 		
 		container.setLayout(new BorderLayout());
 		addKeyListener(keyListen);
